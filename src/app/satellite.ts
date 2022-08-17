@@ -1,3 +1,5 @@
+import { VirtualTimeScheduler } from "rxjs";
+
 export class Satellite {
 
 	name: string;
@@ -15,12 +17,8 @@ export class Satellite {
    }
 	
 	isSpaceDebris(): boolean {
-		if (type = "Space Debris") {
-		return true;
-   } else if (type != "Space Debris"){
-	return false;
-   }
-
+		return this.type ==="space debris";
+	}
 }
 
 // TODO 3a: fix isSpaceDebris check
