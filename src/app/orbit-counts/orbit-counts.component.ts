@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { VirtualTimeScheduler } from 'rxjs';
 import { Satellite } from '../satellite';
 
 @Component({
@@ -26,6 +27,11 @@ export class OrbitCountsComponent implements OnInit {
 	}
 	return count;
  }
-
+satelliteTypes(): string[]{
+	if(!this.satellites) {
+		return[];
+	}
+	return this.satellites.filter((s, index)=> this.satellites.findIndex(s2 => s2.type ===s.type)===index).map(s=>s.type);
+}
 
 }
